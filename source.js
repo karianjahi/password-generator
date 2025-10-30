@@ -7,7 +7,12 @@ Creating a  random password generator app!
 const generatePassword = (passwordLength) => {
     let charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
     let charSetArray = charSet.split("");
-    return charSetArray;
+    let randomPassword = "";
+    for (let i=0; i<passwordLength; i++) 
+        randomPassword += charSetArray[Math.floor(Math.random() * charSet.length)];
+    return randomPassword;    
 }
 
-console.log(generatePassword(10));
+
+let password = generatePassword(20);
+console.log(`Generated password: ${password}`);
